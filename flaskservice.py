@@ -13,7 +13,9 @@ def hello_world():
 def db_access():
     return 'Acessando o Database!'
 
-
+@app.route('/app')
+def db_access():
+    return 'Acessando o APP!'
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
