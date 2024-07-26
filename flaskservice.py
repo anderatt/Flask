@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from flask import Flask # type: ignore
+from flask import Flask # type: ignorecccc
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
