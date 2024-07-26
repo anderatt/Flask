@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
-from flask import Flask # type: ignore
+from flask import Flask
+from flask import request
+
+from libtomzitz import validaCPF
+import requests
+
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
@@ -21,5 +26,17 @@ def db_access():
 def box_access():
     return 'Acessando o BOX!'
 
+@app.route('/cpf', methods=['GET'])
+def cpf_valida():
+    sCPF = request.args.get('numcpf')
+    #if validaCPF("09782594830"):
+    if validaCPF(sCPF):
+        sretorno="CPF Válido"
+    else:
+        sretorno="CPF Inválido"
+
+    return sretorno
+
 if __name__ == '__main__':
+
     app.run(host="0.0.0.0")
