@@ -17,5 +17,9 @@ def db_access():
 def db_access():
     return 'Acessando o APP!'
 
+@app.route('/box')
+def box_access():
+    return 'Acessando o BOX!'
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
